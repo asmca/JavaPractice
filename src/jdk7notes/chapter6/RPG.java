@@ -7,8 +7,7 @@ package jdk7notes.chapter6;
 public class RPG {
     public static void main(String[] args){
         SwordsMan swordsMan=new SwordsMan();
-        int a=swordsMan.getBlood();
-
+ 
         swordsMan.setName("Justin");
         swordsMan.setLevel(1);
         swordsMan.setBlood(200);
