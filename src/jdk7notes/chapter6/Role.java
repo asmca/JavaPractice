@@ -4,9 +4,9 @@ package jdk7notes.chapter6;
  * Created by suse on 11/23/14.
  */
 public class Role {
-    private String name;
-    private int level;
-    private int blood;
+    protected String name;
+    protected int level;
+    protected int blood;
 
 
 
@@ -30,6 +30,10 @@ public class Role {
     }
     public void setName(String name){
         this.name=name;
+    }
+
+    public String toString(){
+        return String.format("(%s, %d, %d)", this.name, this.level, this.blood);
     }
 
 }

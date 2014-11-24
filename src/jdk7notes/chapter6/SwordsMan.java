@@ -9,4 +9,9 @@ public class SwordsMan extends Role{
         System.out.println("挥剑攻击");
     }
 
+
+    @Override
+    public String toString(){
+        return "剑士"+ super.toString();
+    }
 }
