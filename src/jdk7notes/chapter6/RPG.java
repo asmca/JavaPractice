@@ -21,8 +21,11 @@ public class RPG {
 
 //        System.out.printf("魔法师: (%s, %d,%d)%n", magician.getName(), magician.getLevel(), magician.getBlood());
 
-        System.out.println( swordsMan.toString());
-        System.out.println(  magician.toString());
+//        System.out.println( swordsMan.toString());
+//        System.out.println(  magician.toString());
+        System.out.println( swordsMan);
+        System.out.println(  magician);
+
 
     }
 }
