@@ -1,5 +1,6 @@
 package jdk7notes.chapter8;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -9,20 +10,24 @@ import java.util.Scanner;
 public class Average {
 
     public static void main(String[] args){
-        Scanner scanner=new Scanner(System.in);
+        try {
+            Scanner scanner = new Scanner(System.in);
 
-        double sum=0;
-        int count=0;
-        int number;
+            double sum = 0;
+            int count = 0;
+            int number;
 
-        while(true){
-            number=scanner.nextInt();
-            if (number==0){
-                break;
+            while (true) {
+                number = scanner.nextInt();
+                if (number == 0) {
+                    break;
+                }
+                sum += number;
+                count++;
             }
-            sum+=number;
-            count++;
+            System.out.printf("平均 %.2f%n", sum / count);
+        }catch (InputMismatchException e){
+            System.out.println("请输入整数");
         }
-        System.out.printf("平均 %.2f%n", sum/count);
     }
 }
