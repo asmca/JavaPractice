@@ -1,15 +1,16 @@
 package jdk7notes.chapter8;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
  * file in ${PACKAGE_NAME}
  * Created by suse on 11/25/14.
  */
-public class Average {
+public class Average2 {
 
     public static void main(String[] args){
-
+        try {
             Scanner scanner = new Scanner(System.in);
 
             double sum = 0;
@@ -25,6 +26,8 @@ public class Average {
                 count++;
             }
             System.out.printf("平均 %.2f%n", sum / count);
-
+        }catch (InputMismatchException e){
+            System.out.println("请输入整数");
+        }
     }
 }
