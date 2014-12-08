@@ -11,8 +11,10 @@ import java.util.Scanner;
 public class FileUtil {
     public static String readFile(String name) throws FileNotFoundException{
         StringBuilder builder=new StringBuilder();
+        Scanner scanner=null;
+
         try{
-            Scanner scanner=new Scanner(new FileInputStream(name));
+            scanner=new Scanner(new FileInputStream(name));
             while (scanner.hasNext()){
                 builder.append(scanner.nextInt());
                 builder.append('\n');
@@ -20,6 +22,10 @@ public class FileUtil {
         }catch (FileNotFoundException ex ){
             ex.printStackTrace();
             throw ex;
+        }finally {
+            if (scanner!=null){
+                scanner.close();
+            }
         }
         return builder.toString();
     }

@@ -27,7 +27,9 @@ public class Main3 {
     }
 
     public static void main(String[] args){
+
         try{
+
             c();
         }catch (NullPointerException ex){
             ex.printStackTrace();
