@@ -9,7 +9,7 @@ import java.util.List;
  * Created by suse on 14-12-28.
  */
 
-class Account {
+class Account implements Comparable{
     private String name;
     private String number;
     private int balance;
@@ -28,14 +28,20 @@ class Account {
                 ", balance=" + balance +
                 '}';
     }
+
+    @Override
+    public int compareTo(Object o) {
+        Account other = (Account) o;
+        return this.balance - other.balance;
+    }
 }
 
 public class Sort2 {
     public static void main(String[] args) {
         List accounts= Arrays.asList(
-            new Account("Justin", "X1234",1000);
-            new Account("Monica", "X5678",500);
-            new Account("Irene", "X6789",200);
+            new Account("Justin", "X1234",1000),
+            new Account("Monica", "X5678",500),
+            new Account("Irene", "X6789",200)
         );
 
         Collections.sort(accounts);
