@@ -2,6 +2,7 @@ package jdk7notes.chapter9;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * file in jdk7notes.chapter9
@@ -10,7 +11,7 @@ import java.util.Map;
 public class MapKeyValue {
     public static void main(String[] args) {
 
-        Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new TreeMap<>();
         map.put("one", "一");
         map.put("two", "二");
         map.put("three", "三");
