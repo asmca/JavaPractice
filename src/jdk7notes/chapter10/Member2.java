@@ -6,7 +6,8 @@ import java.io.*;
  * file in jdk7notes.chapter10
  * Created by suse on 14-12-28.
  */
-public class Member2 implements Serializable {
+//public class Member2 implements Serializable {
+public class Member2  {
     private String number;
     private String name;
     private transient int  age;
