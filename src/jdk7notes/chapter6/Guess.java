@@ -1,4 +1,4 @@
-package jdk7notes.chapter6;
+ package jdk7notes.chapter6;
 
 import java.util.Scanner;
 

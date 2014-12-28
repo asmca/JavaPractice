@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Guest {
     public static void main(String[] args) {
-        List list=new ArrayList();
+        List list=new java.util.ArrayList();
 
         Scanner scanner=new Scanner(System.in);
         String name;
