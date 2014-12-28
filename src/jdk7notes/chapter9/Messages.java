@@ -3,6 +3,7 @@ package jdk7notes.chapter9;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  * file in jdk7notes.chapter9
@@ -10,7 +11,7 @@ import java.util.Scanner;
  */
 public class Messages {
     public static void main(String[] args) {
-        Map<String, String> messages= new HashMap<>();
+        Map<String, String> messages= new TreeMap<>();
         messages.put("Justin","给 Justine的信息! ");
         messages.put("Monica", "Hello Monica !");
         messages.put("Irene", "Irene的可爱喵!");
