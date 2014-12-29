@@ -20,7 +20,8 @@ public class Pair implements Serializable{
 
     private static final long serialVersionUID = -1874850715617681161L;
     private int type;
-    private transient String name;
+    private  String name;
+    //private transient String name;
 
     public int getType() {
         return type;
