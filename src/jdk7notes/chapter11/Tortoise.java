@@ -4,7 +4,8 @@ package jdk7notes.chapter11;
  * file in jdk7notes.chapter11
  * Created by suse on 15-1-5.
  */
-public class Tortoise implements Runnable {
+//public class Tortoise implements Runnable {
+public class Tortoise extends Thread {
     private boolean flags[]={true, false};
     private int totalStep;
     private int step;
