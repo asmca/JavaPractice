@@ -14,7 +14,9 @@ public class ArrayListDemo {
         Thread t1 = new Thread(){
             public void run(){
                 while (true){
-                    list.add(1);
+                    synchronized (list) {  //sync. object
+                        list.add(1);
+                    }
                 }
             }
         };
@@ -22,7 +24,9 @@ public class ArrayListDemo {
         Thread t2= new Thread(){
             public void run(){
                 while(true){
-                    list.add(2);
+                    synchronized (list) {
+                        list.add(2);
+                    }
                 }
             }
 
