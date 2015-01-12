@@ -6,10 +6,10 @@ package jdk7notes.chapter11;
  */
 
 class Variable1 {
-    static int i=0, j=0;
+    static volatile int i=0, j=0;
 
-    static synchronized void one(){i++; j++;}
-    static synchronized void two(){
+    static  void one(){i++; j++;}
+    static  void two(){
         System.out.printf("i= %d, j= %d %n", i, j);
     }
 }
