@@ -31,7 +31,7 @@ public class Pages {
     public void download(){
         for (int i = 0; i < urls.length; i++) {
             final int index = i;
-            executor.execute(new Runnable() {
+            executor.execute( new Runnable() {
 
                 @Override
                 public void run() {
@@ -61,10 +61,5 @@ public class Pages {
         }  
         
     }
-    
-    
-    
-    
-    
-    
+
 }
