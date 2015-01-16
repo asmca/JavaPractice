@@ -14,21 +14,25 @@ import java.util.concurrent.locks.*;
 public class Clerk {
     private int product = -1;
     private Lock lock = new ReentrantLock();
-    private  Condition condition = lock.newCondition();
+//    private  Condition condition = lock.newCondition();
+    
+    private  Condition productionSet = lock.newCondition();
+    private  Condition consumerSet = lock.newCondition();
+    
     
     public void setProduct(int product){
         try {
             lock.lock( );
             while (this.product != -1) {
                 try {
-                    condition.await();
+                    productionSet.await();
                 } catch (InterruptedException  ex) {
                     throw new RuntimeException(ex);
                 }
             }
             this.product = product;
             System.out.printf("生产者设定 (%d) %n", this.product);
-            condition.signal();
+            productionSet.signal();
         } finally {
             lock.unlock();
         }
@@ -39,7 +43,7 @@ public class Clerk {
             lock.lock();
             while (this.product == -1) {
                 try {
-                    condition.await();
+                    consumerSet.await();
                 } catch (InterruptedException e) {
                     throw  new RuntimeException(e);
                 }
@@ -48,7 +52,7 @@ public class Clerk {
             int p = this.product;
             System.out.printf("消费者取走 (%d) %n", this.product);
             this.product = -1;
-            condition.signal();
+            consumerSet.signal();
             return p;
         }
         finally {
