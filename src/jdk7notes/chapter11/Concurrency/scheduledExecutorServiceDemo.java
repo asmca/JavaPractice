@@ -12,13 +12,16 @@ public class scheduledExecutorServiceDemo {
     public static void main(String[] args) {
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
 
-        service.scheduleWithFixedDelay(
+        //service.scheduleWithFixedDelay(
+        service.scheduleAtFixedRate(
+
                 new Runnable() {
                     @Override
                     public void run() {
                         System.out.println(new java.util.Date());
                         try {
-                            Thread.sleep(2000);
+                            //Thread.sleep(2000);
+                            Thread.sleep(500);
                         }catch (InterruptedException ex){
                             throw new   RuntimeException(ex);
                         }
