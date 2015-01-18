@@ -1,8 +1,6 @@
 package jdk7notes.chapter11.Concurrency;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 
 /**
  * file in jdk7notes.chapter11.Concurrency
@@ -19,17 +17,24 @@ public class FutureCallableDemo {
 
 
     public static void main(String[] args) {
-        FutureTask<Long> fib30 = new FutureTask<Long>(
-                new Callable<Long>() {
-                    @Override
-                    public Long call() throws Exception {
-                        return fibonacci(30);
-                    }
-                }
-        );
+        ExecutorService service = Executors.newCachedThreadPool();
+        Future<Long> fib30 =  service.submit(new Callable<Long>() {
+            @Override
+            public Long call() throws Exception {
+                return fibonacci(30);
+            }
+        });
+//        FutureTask<Long> fib30 = new FutureTask<Long>(
+//                new Callable<Long>() {
+//                    @Override
+//                    public Long call() throws Exception {
+//                        return fibonacci(30);
+//                    }
+//                }
+//        );
 
         System.out.println("要第30个Fibonacci#, ...");
-        new Thread(fib30).start();
+        //new Thread(fib30).start();
 
         System.out.println("Do other things.");
 
