@@ -29,5 +29,7 @@ public class Download3 {
         ExecutorService executorService = Executors.newCachedThreadPool();
         new Pages(urls, fileNames, executorService).download();
 
+        executorService.shutdown();
+
     }
 }
