@@ -9,7 +9,12 @@ package AgileDev.chapter5;
  *
  * @author suse
  */
-public class GeneratePrimes {
+
+/*
+Im gonna refactoring this file.
+ */
+
+public class GeneratePrimes_v0 {
     
     public static  int[] generatePrimes(int maxValue){
         if (maxValue>=2) {
