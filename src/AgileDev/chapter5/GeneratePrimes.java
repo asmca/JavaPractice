@@ -15,6 +15,7 @@ public class GeneratePrimes {
         if (maxValue>=2) {
             int s = maxValue+1;
             boolean[] f = new boolean[s];
+
             for (int i = 0; i < s; i++) {
                 f[i] = true;
                 
@@ -22,11 +23,9 @@ public class GeneratePrimes {
             
             f[0] = f[1] = false;
             
-            for (int i = 0; i < Math.sqrt(s)+1; i++) {
+            for (int i = 2; i < Math.sqrt(s)+1; i++) {
                 for (int j = 2*i; j < s; j+=i) {
-                    if (f[j]==true) {
                         f[j]= false;
-                    }
                 }
             }
             
