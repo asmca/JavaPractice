@@ -14,7 +14,7 @@ package AgileDev.chapter5;
 Im gonna refactoring this file.
  */
 
-public class GeneratePrimes_v0 {
+public class GeneratePrimes {
     
     public static  int[] generatePrimes(int maxValue){
         if (maxValue>=2) {
