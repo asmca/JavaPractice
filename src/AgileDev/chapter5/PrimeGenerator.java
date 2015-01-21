@@ -1,6 +1,8 @@
 package AgileDev.chapter5;
 
 /**
+ *  sample of refactoring.
+ *
  * Created by suse on 1/21/15.
  */
 public class PrimeGenerator {

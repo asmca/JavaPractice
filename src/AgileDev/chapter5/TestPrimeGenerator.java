@@ -15,21 +15,21 @@ public class TestPrimeGenerator  extends TestCase{
     }
 
     public void testPrimes(){
-        int[] nullArray = GeneratePrimes_v0.generatePrimes(0);
+        int[] nullArray = PrimeGenerator.generatePrimes(0);
         assertEquals(nullArray.length, 0);
 
-        int[] minArray = GeneratePrimes_v0.generatePrimes(2);
+        int[] minArray = PrimeGenerator.generatePrimes(2);
         assertEquals(minArray.length, 1);
         assertEquals(minArray[0], 2);
 
 
-        int[]threeArray = GeneratePrimes_v0.generatePrimes(3);
+        int[]threeArray = PrimeGenerator.generatePrimes(3);
         assertEquals(threeArray.length, 2);
         assertEquals(threeArray[0], 2);
         assertEquals(threeArray[1], 3);
 //        assertEquals(threeArray[1], 5);
 
-        int[] centArray = GeneratePrimes_v0.generatePrimes(100);
+        int[] centArray = PrimeGenerator.generatePrimes(100);
         assertEquals(centArray.length, 25);
         assertEquals(centArray[24], 97);
     }
@@ -42,8 +42,8 @@ public class TestPrimeGenerator  extends TestCase{
     }
 
     private void verifyPrimeList(int[] list){
-        for (int i = 0; i < list.length; i++) {
-            verifyPrime(list[i]);
+        for (int aList : list) {
+            verifyPrime(aList);
         }
 //        for (int i = 0; i < list.length; i++) {
 //            verifyPrime(list[i]);
