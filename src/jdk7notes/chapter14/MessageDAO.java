@@ -23,14 +23,21 @@ public class MessageDAO {
 
     public void add(Message  message) {
         try (Connection conn = DriverManager.getConnection(url, user, passwd);
-             Statement statement = conn.createStatement()) {
+             //Statement statement = conn.createStatement()
+             PreparedStatement statement = conn.prepareStatement("INSERT INTO t_message(name, email, msg) values (?,?,?)")
+        ) {
+//
+//            statement.executeUpdate(
+//                    "INSERT INTO t_message(name, email, msg) VALuES ('" +
+//                            message.getName() + "', '" +
+//                            message.getEmail() + "', '" +
+//                            message.getMsg() + "')"
+//            );
 
-            statement.executeUpdate(
-                    "INSERT INTO t_message(name, email, msg) VALuES ('" +
-                            message.getName() + "', '" +
-                            message.getEmail() + "', '" +
-                            message.getMsg() + "')"
-            );
+            statement.setString(1, message.getName());
+            statement.setString(2, message.getEmail());
+            statement.setString(3, message.getMsg());
+            statement.executeUpdate();
 
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
