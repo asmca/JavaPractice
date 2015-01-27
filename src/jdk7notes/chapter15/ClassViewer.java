@@ -5,9 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-/**
- * Created by suse on 1/27/15.
- */
+
 public class ClassViewer {
 
     public static void view(String clzName) throws  ClassNotFoundException {
