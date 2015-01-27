@@ -14,6 +14,7 @@ class Some2{
 public class SomeDemo2 {
     public static void main(String[] args) throws ClassNotFoundException{
 
+
         Class clz = Class.forName("jdk7notes.chapter15.Some2", false, SomeDemo2.class.getClassLoader());
 
         System.out.println("已载入 Some2.class");
