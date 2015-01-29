@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.nio.file.attribute.FileTime;
 
 /**
  * Created by suse on 1/28/15.
@@ -26,6 +27,10 @@ public class BasicFileAttributesDemo {
         System.out.printf("isSymbolLink: %b%n", attrs.isSymbolicLink());
         System.out.printf("size: %b%n", attrs.size());
 
+
+
+        Files.setLastModifiedTime(file, FileTime.fromMillis(System.currentTimeMillis()));// seems not return sync.
+        System.out.printf("lastModifiledTime: %s%n", attrs.lastModifiedTime());
 
 
 
