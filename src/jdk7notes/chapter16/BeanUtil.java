@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 
 public class BeanUtil {
-    public static Object getBeans(Map<String, Object> data, String clzName) throws Exception{
+    public static <T>T getBeans(Map<String, Object> data, String clzName) throws Exception{
 
         Class clz = Class.forName(clzName);
         Object bean =  clz.newInstance();
@@ -32,7 +32,7 @@ public class BeanUtil {
 
 
         }
-        return bean;
+        return (T)bean;
 
     }
 }
