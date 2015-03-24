@@ -10,17 +10,28 @@ public class Singleton {
 
     }
 
-    public static Singleton getInstance(){
-        if (instance ==null)
-        {
-            synchronized (instance) {
-             if (instance==null){
-                instance = new Singleton();
-             }
-            }
-        }
-        return instance;
+    private static class SingletonFactory {
+        private static Singleton instance = new Singleton();
     }
+
+    public static Singleton getInstance(){
+            return SingletonFactory.instance;
+        }
+
+
+
+//
+//    public static Singleton getInstance(){
+//        if (instance ==null)
+//        {
+//            synchronized (instance) {
+//             if (instance==null){
+//                instance = new Singleton();
+//             }
+//            }
+//        }
+//        return instance;
+//    }
 
     public  Object readResolve(){
         return instance;
